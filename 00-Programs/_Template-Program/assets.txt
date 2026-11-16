@@ -1,0 +1,22 @@
+# Assets for [Program Name]
+# One asset per line. Lines starting with # are comments.
+# Keep this file in sync with the In-scope assets table in scope.md.
+# The scope-check script (01-Recon/scripts/scope-check.sh) reads this file:
+# a target is only testable if it matches one of these lines.
+# Wildcards use the * prefix. Never add an asset here that the live
+# HackerOne policy does not list as in scope.
+
+# Domains
+example.com
+# *.example.com
+# api.example.com
+
+# IP ranges (CIDR)
+# 192.0.2.0/24
+
+# Mobile apps (store links or bundle IDs)
+# com.example.app (Android)
+# com.example.app (iOS)
+
+# Third-party services explicitly in scope (only if the policy names them)
+# *.example-cdn.com

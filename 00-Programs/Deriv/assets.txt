@@ -1,0 +1,20 @@
+# Assets for Deriv
+# One asset per line. Lines starting with # are comments.
+# Keep this file in sync with the In-scope assets table in scope.md.
+# The scope-check script (01-Recon/scripts/scope-check.sh) reads this file.
+# WARNING: *.home.deriv.com and *.api-core.deriv.com are OUT of scope
+# and are deliberately left out here.
+
+*.deriv.com
+*.deriv.cloud
+*.derivws.com
+api.deriv.com
+app.deriv.com
+cashier.deriv.com
+oauth.deriv.com
+smarttrader.deriv.com
+secure-dfadmin.deriv.com
+# MT5 — product, no single domain
+# Deriv P2P — product
+# Deriv GO — mobile app
+# auth.deriv.com — API testing is fine; the login UI on home.deriv.com is out

@@ -1,0 +1,24 @@
+# Assets for Hostinger
+# One asset per line. Lines starting with # are comments.
+# Keep this file in sync with the In-scope assets table in scope.md.
+# The scope-check script (01-Recon/scripts/scope-check.sh) reads this file.
+# WARNING: auth.hostinger.com, access.hostinger.com and cart.hostinger.com
+# are NOT in the 34-asset list — they are deliberately left out here.
+# Findings there need program clarification first.
+
+www.hostinger.com
+hpanel.hostinger.com
+cpanel.hostinger.com
+payments.hostinger.com
+builder.hostinger.com
+horizons.hostinger.com
+reach.hostinger.com
+agents.hostinger.com
+mail.hostinger.com
+*.000webhost.com
+zyro.com
+hosting24.com
+niagahoster.co.id
+# H5G — product, no single domain
+# Managed OpenClaw — product, no single domain
+# developers.hostinger.com — real API base (verify it is in scope first)

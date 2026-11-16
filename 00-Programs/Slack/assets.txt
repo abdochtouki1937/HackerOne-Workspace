@@ -1,0 +1,18 @@
+# Assets for Slack
+# One asset per line. Lines starting with # are comments.
+# Keep this file in sync with the In-scope assets table in scope.md.
+# The scope-check script (01-Recon/scripts/scope-check.sh) reads this file.
+
+slack.com
+app.slack.com
+api.slack.com
+edgeapi.slack.com
+slack-imgs.com
+slack-redir.net
+slack-status.com
+slackatwork.com
+slackb.com
+spaces.pm
+# Quip — Critical severity only
+# Nebula source — Critical severity only
+# Slack mobile / desktop apps
