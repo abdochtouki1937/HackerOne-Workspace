@@ -90,3 +90,69 @@ execution, or complete data exposure.]
 - [ ] Severity is honest — only the impact proved is claimed.
 - [ ] No secrets, tokens, or passwords in the report or evidence.
 - [ ] Version under test recorded (latest release, re-checked today).
+- [ ] Full chain demonstrated end-to-end — no step is "assumed to work";
+      every step in the chain has a saved request/response.
+- [ ] Impact is total compromise (RCE, full ATO, complete data exposure)
+      — not a partial read or a self-only effect dressed up as Critical.
+- [ ] No precondition hidden — if the attack needs any setup (a victim
+      action, a specific configuration, a prior step), it is stated in
+      the title, the summary, AND the Impact section.
+- [ ] The vulnerable component and the compromised component are both
+      named (scope-change claim needs both, or S:U is the honest call).
+- [ ] No other severity's evidence is borrowed — the Critical claim
+      rests on this finding's own PoC, not on a related Medium/Low.
+
+## Good vs Bad examples
+
+Write like the GOOD column. The BAD column is the mistake triage sees
+every day.
+
+**Title**
+
+- GOOD: "Unauthenticated remote code execution via crafted file upload
+  in the admin import endpoint — attacker gains full server control"
+- BAD: "Security issue" / "Critical vulnerability in your app" /
+  "RCE???" — no endpoint, no mechanism, no impact; triage cannot
+  route it and the report starts at a credibility deficit.
+
+**Summary**
+
+- GOOD: "An unauthenticated attacker uploads a crafted file to the
+  import endpoint; the server stores it under a web-accessible path
+  and executes it as the application user. No user interaction is
+  needed. The attacker gains full control of the application server
+  and its database, as shown in the PoC (shell output / database rows
+  returned)."
+- BAD: "I found a bug that lets hackers take over your system. It is
+  very critical. Please fix it." — no attacker, no endpoint, no
+  mechanism, no proof; reads as a guess, not a finding.
+
+**Impact statement**
+
+- GOOD: "Any unauthenticated attacker can execute arbitrary commands
+  as the application user on the production server, read and modify
+  all application data, and pivot to internal services reachable from
+  the server. Demonstrated end-to-end in the PoC: [what was actually
+  run / read]."
+- BAD: "This could allow full compromise of the company, all user
+  data, and maybe the whole infrastructure." — "could" and "maybe" with
+  no demonstrated step; triage downgrades speculation, it does not
+  reward it.
+
+Other BAD patterns to avoid at Critical: a copy-paste CVSS vector with
+no per-metric justification; claiming ATO when only a self-account
+effect was shown; hiding "requires admin to import the file" in step
+7 while the title says "unauthenticated".
+
+## Severity notes
+
+Critical is the highest severity on HackerOne and the hardest to keep.
+It must match proved impact: the report must demonstrate total
+compromise — remote code execution, full account takeover of any user,
+or complete exposure of sensitive data — end-to-end, with no hidden
+precondition. No bounty range is promised here; severity must match
+proved impact, nothing more. Triage downgrades inflated reports, and
+a report filed one level too high costs credibility and spends trial
+budget on a finding that will come back lower. If any step of the
+chain is unproved, file at the severity the proved impact supports
+and say what is still unproved.

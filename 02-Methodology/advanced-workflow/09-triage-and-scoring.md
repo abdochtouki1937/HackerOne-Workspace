@@ -38,6 +38,16 @@ Low), Impact 0 (existence oracle only), Ease of proof 2, Duplicate
 risk 0 (stock Ory Kratos behaviour). Total 3/10 — park it. It was
 confirmed Low and correctly not filed as-is.
 
+A second, complementary model lives in `lead-scoring.md`: four
+factors (Freshness × Attack Surface × Duplicate Pressure × Potential
+Impact), each scored 1–5 and multiplied (max 625), with bands at
+≥ 200 (test now), 80–199 (test next), and < 80 (park). It is
+multiplicative, so a lead dead on any one factor cannot be rescued
+by the others — use it when two leads tie on the 0–10 model, or to
+decide which good lead gets the next wave. When the two models
+disagree, test the lead anyway if either scores in its top band, and
+record why in `notes.md`.
+
 ## 9.2 Duplicate Radar (before choosing a direction)
 
 Borrowed from naliazheli/agent-workspace
